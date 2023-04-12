@@ -22,3 +22,5 @@ Necesitamos un diagrama de casos de uso que cubra las funcionalidades mínimas p
 Además partimos de un desarrollo inicial que cubre todas las funcionalidades CRUD de la clase cliente. Falta por implementar alquilarCoche, ya que de momento, la única clase existente en el proyecto es Cliente. Siguiendo con la arquitectura propuesta y basándonos en TDD, desarrollar todas las funcionalidades obtenidas en los casos de uso.
 
 
+!<TODO Pendientes las clases e intrefaces de cada una de las cajas en repository>
+
