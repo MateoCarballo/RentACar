@@ -9,14 +9,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ICarRepositoryTest {
 
-    CarRepository repository= new CarRepository();
-
+    CarRepository repository = new CarRepository();
 
 
     @BeforeEach
-    void setUp(){
-        Car car0=   new Car("0000-AAA");
-        Car car1=   new Car("1111-BBB");
+    void setUp() {
+        Car car0 = new Car("0000-AAA");
+        Car car1 = new Car("1111-BBB");
         repository.addCar(car0);
         repository.addCar(car1);
     }
@@ -24,15 +23,14 @@ class ICarRepositoryTest {
 
     @Test
     void addCar() {
-        Car car3=new Car("3333-CCC");
+        Car car3 = new Car("3333-CCC");
         repository.addCar(car3);
-        Assertions.assertEquals(car3,repository.findById(3L));
+        Assertions.assertEquals(car3, repository.findByIdCar(3L));
 
     }
 
     @Test
-    void deleteByLicensePlate() {
-
+    void deleteByIdCar() {
     }
 
     @Test
@@ -40,7 +38,7 @@ class ICarRepositoryTest {
     }
 
     @Test
-    void findByLicensePlate() {
+    void findByIdCar() {
     }
 
     @Test

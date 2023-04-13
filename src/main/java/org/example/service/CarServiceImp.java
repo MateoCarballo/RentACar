@@ -31,7 +31,7 @@ public class CarServiceImp implements ICarService{
 
     @Override
     public Car findById(Long idCar) {
-        return repositoryCar.findById(idCar);
+        return repositoryCar.findByIdCar(idCar);
     }
 
     @Override
