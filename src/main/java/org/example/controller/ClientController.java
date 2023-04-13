@@ -23,7 +23,7 @@ public class ClientController {
         service.deleteById(id);
     }
 
-    public ArrayList findAll(){
+    public ArrayList<Client> findAll(){
         return service.findAll();
     }
 

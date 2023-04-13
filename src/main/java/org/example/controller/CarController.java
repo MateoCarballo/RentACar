@@ -29,7 +29,7 @@ public class CarController {
         serviceCar.deleteById(idCar);
     }
 
-    public ArrayList findAll(){
+    public ArrayList<Car> findAll(){
         return serviceCar.findAll();
     }
     public Car findByIdCar(Long idCar){
