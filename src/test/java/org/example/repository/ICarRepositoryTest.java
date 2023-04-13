@@ -26,7 +26,7 @@ class ICarRepositoryTest {
     void addCar() {
         Car car3=new Car("3333-CCC");
         repository.addCar(car3);
-        Assertions.assertEquals(car3,repository.findById(3));
+        Assertions.assertEquals(car3,repository.findById(3L));
 
     }
 

@@ -21,7 +21,6 @@ public class ClientController {
 
     public void deleteById(Long id){
         service.deleteById(id);
-
     }
 
     public ArrayList findAll(){
