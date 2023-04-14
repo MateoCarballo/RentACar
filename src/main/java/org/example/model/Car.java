@@ -5,6 +5,8 @@ public class Car {
     Long idCar=-1L;
     String licensePlate;
 
+    Modelos modelo;
+
     public Long getIdCar() {
         return idCar;
     }
@@ -19,6 +21,14 @@ public class Car {
 
     public void setLicensePlate(String licensePlate) {
         this.licensePlate = licensePlate;
+    }
+// TODO esto se puede hacer así? Mi idea es que Modelo sea una enumeración y cojas
+//  la que necesites para crear cada Modelo de coche con su precio y su nombre en conjunto
+//  solucionariamos así la relacion (1--*)?
+    public void setLicensePlate(String licensePlate,Modelos modelo) {
+        this.licensePlate = licensePlate;
+        this.modelo= Modelos.MODELO_A;
+
     }
 
     public Car(){}
