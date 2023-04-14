@@ -1,7 +1,8 @@
 package org.example.controller;
 
 
-import org.example.model.Car;
+import org.example.model.CarA;
+import org.example.model.Modelos;
 import org.example.service.CarServiceImp;
 import org.example.service.ICarService;
 
@@ -16,27 +17,26 @@ public class CarController {
     }
 
     /**
-     *
      * Abajo uso la misma forma que veo en client
      * Tienes el constructor sobrecargado e hice lo mismo para
      * poder crear un coche sin idCoche solo con su matrícula.
      */
     public void add (String licensePlate){
-        Car car = new Car(licensePlate);
+        CarA carA = new CarA(licensePlate);
     }
 
     public void deleteByIdCar(Long idCar){
         serviceCar.deleteById(idCar);
     }
 
-    public ArrayList<Car> findAll(){
+    public ArrayList<CarA> findAll(){
         return serviceCar.findAll();
     }
-    public Car findByIdCar(Long idCar){
+    public CarA findByIdCar(Long idCar){
         return serviceCar.findById(idCar);
     }
     public void updateCar (Long idCar,String licensePlate){
-        Car car = new Car(licensePlate,idCar);
-        serviceCar.update(car);
+        CarA carA = new CarA(licensePlate,idCar, Modelos.MODELO_A);
+        serviceCar.update(carA);
     }
 }

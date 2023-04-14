@@ -1,14 +1,13 @@
 package org.example.service;
 
-import org.example.model.Car;
-import org.example.model.Client;
+import org.example.model.CarA;
 
 import java.util.ArrayList;
 
 public interface ICarService {
-    void add(Car car);
+    void add(CarA carA);
     void deleteById(Long idCar);
     ArrayList findAll();
-    Car findById(Long idCar);
-    void update(Car car);
+    CarA findById(Long idCar);
+    void update(CarA carA);
 }

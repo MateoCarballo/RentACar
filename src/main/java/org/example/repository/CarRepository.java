@@ -1,42 +1,42 @@
 package org.example.repository;
 
-import org.example.model.Car;
+import org.example.model.CarA;
 
 import java.util.ArrayList;
 
 public class CarRepository implements ICarRepository{
 
-    private ArrayList<Car> cars;
+    private ArrayList<CarA> carAS;
 
     public CarRepository() {
-        cars = new ArrayList<>();
+        carAS = new ArrayList<>();
     }
 
     @Override
-    public void addCar(Car car) {
-        car.setIdCar(nextIdAvailable());
-        cars.add(car);
+    public void addCar(CarA carA) {
+        carA.setIdCar(nextIdAvailable());
+        carAS.add(carA);
     }
 
     @Override
-    public void update(Car car) {
-        Car carToUpdate = findByIdCar(car.getIdCar());
-        if(carToUpdate != null){
-            carToUpdate.setIdCar(car.getIdCar());
-            carToUpdate.setLicensePlate(car.getLicensePlate());
+    public void update(CarA carA) {
+        CarA carAToUpdate = findByIdCar(carA.getIdCar());
+        if(carAToUpdate != null){
+            carAToUpdate.setIdCar(carA.getIdCar());
+            carAToUpdate.setLicensePlate(carA.getLicensePlate());
         }
     }
     @Override
-    public ArrayList<Car> findAll() {
-        return cars;
+    public ArrayList<CarA> findAll() {
+        return carAS;
     }
 
     @Override
-    public Car findByIdCar(Long idCar) {
+    public CarA findByIdCar(Long idCar) {
         if(!isEmpty()){
-            for (Car car : cars) {
-                if(car.getIdCar() == idCar){
-                    return car;
+            for (CarA carA : carAS) {
+                if(carA.getIdCar() == idCar){
+                    return carA;
                 }
             }
             return null;
@@ -63,9 +63,9 @@ public class CarRepository implements ICarRepository{
      */
     @Override
     public void deleteByIdCar(Long idCar) {
-        for (int i = 0; i < cars.size(); i++) {
-            if (cars.get(i).getIdCar()==idCar){
-                cars.remove(i);
+        for (int i = 0; i < carAS.size(); i++) {
+            if (carAS.get(i).getIdCar()==idCar){
+                carAS.remove(i);
             }
         }
     }
@@ -87,14 +87,14 @@ public class CarRepository implements ICarRepository{
 
      */
     public boolean isEmpty(){
-        if(cars.size() == 0){
+        if(carAS.size() == 0){
             return true;
         }
         return false;
     }
     public Long nextIdAvailable(){
         if(!isEmpty()){
-            return cars.get(cars.size()-1).getIdCar() + 1;
+            return carAS.get(carAS.size()-1).getIdCar() + 1;
         }
         else{
             return 1L;
