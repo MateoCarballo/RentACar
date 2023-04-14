@@ -1,10 +1,10 @@
 package org.example.controller;
 
 
-import org.example.model.CarA;
-import org.example.model.Modelos;
-import org.example.service.CarServiceImp;
-import org.example.service.ICarService;
+import org.example.model.Car.CarA;
+import org.example.model.Car.Modelos;
+import org.example.service.car.CarServiceImp;
+import org.example.service.car.ICarService;
 
 import java.util.ArrayList;
 

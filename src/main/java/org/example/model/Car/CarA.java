@@ -1,6 +1,6 @@
-package org.example.model;
+package org.example.model.Car;
 
-public class CarA extends Car{
+public class CarA extends Car {
 
     private Long idCar=-1L;
     private String licensePlate;

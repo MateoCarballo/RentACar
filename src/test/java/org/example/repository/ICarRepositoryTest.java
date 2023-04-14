@@ -1,6 +1,6 @@
 package org.example.repository;
 
-import org.example.model.CarA;
+import org.example.model.Car.CarA;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

@@ -1,6 +1,6 @@
 package org.example.repository;
 
-import org.example.model.CarA;
+import org.example.model.Car.CarA;
 
 import java.util.ArrayList;
 

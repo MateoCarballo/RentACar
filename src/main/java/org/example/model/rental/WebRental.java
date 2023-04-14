@@ -1,8 +1,10 @@
-package org.example.model;
+package org.example.model.rental;
+
+import org.example.model.rental.Rental;
 
 import java.util.Date;
 
-public class WebRental extends Rental{
+public class WebRental extends Rental {
 
     private int deliveryTime;
 

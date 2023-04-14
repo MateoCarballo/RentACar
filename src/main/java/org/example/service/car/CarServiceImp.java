@@ -1,12 +1,12 @@
-package org.example.service;
+package org.example.service.car;
 
-import org.example.model.CarA;
+import org.example.model.Car.CarA;
 import org.example.repository.CarRepository;
 import org.example.repository.ICarRepository;
 
 import java.util.ArrayList;
 
-public class CarServiceImp implements ICarService{
+public class CarServiceImp implements ICarService {
 
     private ICarRepository repositoryCar;
 

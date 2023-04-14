@@ -1,4 +1,4 @@
-package org.example.service;
+package org.example.service.client;
 
 import org.example.model.Client;
 

@@ -1,4 +1,4 @@
-package org.example.model;
+package org.example.model.Car;
 
 public abstract class Car {
     private Long idCar;
