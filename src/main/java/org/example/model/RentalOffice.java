@@ -8,17 +8,12 @@ public class RentalOffice {
     String address;
     int feeForDelivery;
 
-    public ArrayList<Car> carsAsigned = new ArrayList<>();
-
-    public RentalOffice(String address, int feeForDelivery, ArrayList<Car> carsAsigned) {
-        this.address = address;
-        this.feeForDelivery = feeForDelivery;
-        this.carsAsigned = carsAsigned;
-    }
+    public ArrayList<Car> carsAsigned;
 
     public RentalOffice(String address, int feeForDelivery) {
         this.address = address;
         this.feeForDelivery = feeForDelivery;
+        this.carsAsigned = new ArrayList<>();
     }
 
     public String getAddress() {
