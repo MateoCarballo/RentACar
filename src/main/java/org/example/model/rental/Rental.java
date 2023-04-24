@@ -1,20 +1,32 @@
 package org.example.model.rental;
 
+import org.example.model.Car.Car;
+import org.example.model.Car.CarA;
+import org.example.model.Client;
+
 import java.util.Date;
 
 public abstract class Rental {
 
+    private int idRent;
     private Date startDate;
     private Date endDate;
 
-    public Rental(Date startDate) {
-        this.startDate = startDate;
-    }
+    private Client client;
 
-    public Rental(Date startDate, Date endDate) {
+    private CarA carA;
+
+    public Rental(int idRent, Date startDate, Date endDate, Client client, CarA carA) {
+        this.idRent = idRent;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.client = client;
+        this.carA = carA;
     }
+
+    //TODO mi idea aqui es crearlo vacio y "copiar" un cliente y coche que ya existen
+    // Tengo dudas con si hacer el new aqui o no, entiendo que no porque los coches y clientes ya existen antes de crear
+    // El alquiler.
 
     public Date getStartDate() {
         return startDate;

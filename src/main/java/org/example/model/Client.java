@@ -19,6 +19,7 @@ public class Client {
         this.surname = surname;
     }
 
+    public Client (){};
     public Long getId() {
         return id;
     }

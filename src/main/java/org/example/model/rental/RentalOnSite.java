@@ -1,6 +1,8 @@
 package org.example.model.rental;
 
-import org.example.model.rental.Rental;
+import org.example.model.Car.CarA;
+import org.example.model.Client;
+import org.example.model.RentalOffice;
 
 import java.util.Date;
 
@@ -8,13 +10,12 @@ public class RentalOnSite extends Rental {
 
     private String comments;
 
-    public RentalOnSite(Date startDate) {
-        super(startDate);
-    }
+    private RentalOffice rentalOffice;
 
-    public RentalOnSite(Date startDate, Date endDate, String comments) {
-        super(startDate, endDate);
-        this.comments=comments;
+    public RentalOnSite(int idRent, Date startDate, Date endDate, Client client, CarA carA, String comments,RentalOffice rentalOffice) {
+        super(idRent, startDate, endDate, client, carA);
+        this.comments = comments;
+        this.rentalOffice=rentalOffice;
     }
 
     public String getComments() {

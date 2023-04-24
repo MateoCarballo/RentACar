@@ -1,12 +1,24 @@
 package org.example.repository;
 
+import org.example.model.Car.Car;
+import org.example.model.Client;
+
 public interface IRentalOnSiteRepository extends IRentalRepository {
     @Override
-    void pickUpOffice();
+    default void pickUpOffice() {
+
+    }
 
     @Override
-    void isFor();
+    default void isFor() {
+
+    }
+
+
 
     @Override
-    void makes();
+    default void makeRent(Client customer, Car car) {
+
+    }
+
 }
