@@ -16,6 +16,10 @@ public class RentalOffice {
         this.carsAsigned = new ArrayList<>();
     }
 
+    public ArrayList<Car> getCarsAsigned() {
+        return carsAsigned;
+    }
+
     public String getAddress() {
         return address;
     }

@@ -6,7 +6,6 @@ public abstract class Car {
     private Long idCar;
     private String licensePLate;
     private Modelos modelo;
-    private RentalOffice rentalOfficeAssiged;
     public abstract Long getIdCar();
     public abstract void setIdCar(Long idCar);
     public abstract String getLicensePlate();
