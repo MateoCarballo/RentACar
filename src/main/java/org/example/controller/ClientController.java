@@ -1,8 +1,8 @@
 package org.example.controller;
 
 import org.example.model.Client;
-import org.example.service.ClientServiceImpl;
-import org.example.service.IClientService;
+import org.example.service.client.ClientServiceImpl;
+import org.example.service.client.IClientService;
 
 import java.util.ArrayList;
 
@@ -21,10 +21,9 @@ public class ClientController {
 
     public void deleteById(Long id){
         service.deleteById(id);
-
     }
 
-    public ArrayList findAll(){
+    public ArrayList<Client> findAll(){
         return service.findAll();
     }
 

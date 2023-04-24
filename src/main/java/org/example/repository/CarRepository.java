@@ -1,65 +1,42 @@
 package org.example.repository;
 
-import org.example.model.Car;
-import org.example.model.Client;
+import org.example.model.Car.CarA;
 
 import java.util.ArrayList;
 
 public class CarRepository implements ICarRepository{
 
-    private ArrayList<Car> cars;
+    private ArrayList<CarA> carAS;
 
     public CarRepository() {
-        cars = new ArrayList<>();
+        carAS = new ArrayList<>();
     }
 
-    public int nextIdAvailable(){
+    @Override
+    public void addCar(CarA carA) {
+        carA.setIdCar(nextIdAvailable());
+        carAS.add(carA);
+    }
+
+    @Override
+    public void update(CarA carA) {
+        CarA carAToUpdate = findByIdCar(carA.getIdCar());
+        if(carAToUpdate != null){
+            carAToUpdate.setIdCar(carA.getIdCar());
+            carAToUpdate.setLicensePlate(carA.getLicensePlate());
+        }
+    }
+    @Override
+    public ArrayList<CarA> findAll() {
+        return carAS;
+    }
+
+    @Override
+    public CarA findByIdCar(Long idCar) {
         if(!isEmpty()){
-            return cars.get(cars.size()-1).getIdCar() + 1;
-        }
-        else{
-            return 1;
-        }
-    }
-
-    public boolean isEmpty(){
-        if(cars.size() == 0){
-            return true;
-        }
-        return false;
-    }
-    @Override
-    public void addCar(Car car) {
-        car.setIdCar(nextIdAvailable());
-        cars.add(car);
-    }
-
-    @Override
-    public void deleteByLicensePlate(String licensePlate) {
-
-    }
-
-    @Override
-    public ArrayList<Car> findAll() {
-        return null;
-    }
-
-    @Override
-    public Car findByLicensePlate(String licensePlate) {
-        return null;
-    }
-
-    @Override
-    public void update(Car car) {
-
-    }
-
-    @Override
-    public Car findById(int id) {
-        if(!isEmpty()){
-            for (Car car : cars) {
-                if(car.getIdCar() == id){
-                    return car;
+            for (CarA carA : carAS) {
+                if(carA.getIdCar() == idCar){
+                    return carA;
                 }
             }
             return null;
@@ -67,4 +44,60 @@ public class CarRepository implements ICarRepository{
         return null;
     }
 
+
+    /**
+     Aqui porque no devolvemos un Boolean para saber si hemos hecho el borrado
+     o no?
+
+     public boolean deleteByIdCar(Long idCar) {
+     boolean deleteComplete=false;
+     for (int i = 0; i < cars.size(); i++) {
+     if (cars.get(i).getIdCar()==idCar){
+     cars.remove(i);
+     deleteComplete=true;
+     }
+     }
+     return deleteComplete;
+     }
+
+     */
+    @Override
+    public void deleteByIdCar(Long idCar) {
+        for (int i = 0; i < carAS.size(); i++) {
+            if (carAS.get(i).getIdCar()==idCar){
+                carAS.remove(i);
+            }
+        }
+    }
+    /**
+     * Aquie queria poder buscar por placa de matricula y borrar
+     * al encontrarlo
+     *
+     @Override
+     public Car findByLicensePlate(String licensePlate) {
+     Car car = new Car("9876-ZZZ");
+     car = null;
+     for (int i = 0; i < cars.size(); i++) {
+     if (cars.get(i).getLicensePlate().equalsIgnoreCase(licensePlate)) {
+     car=cars.get(i);
+     }
+     }
+     return car;
+     }
+
+     */
+    public boolean isEmpty(){
+        if(carAS.size() == 0){
+            return true;
+        }
+        return false;
+    }
+    public Long nextIdAvailable(){
+        if(!isEmpty()){
+            return carAS.get(carAS.size()-1).getIdCar() + 1;
+        }
+        else{
+            return 1L;
+        }
+    }
 }
