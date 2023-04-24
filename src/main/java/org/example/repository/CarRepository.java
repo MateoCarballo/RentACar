@@ -5,7 +5,7 @@ import org.example.model.Car.CarA;
 import java.util.ArrayList;
 
 public class CarRepository implements ICarRepository{
-
+    //TODO el Repositor usa ArrayList como una BD
     private ArrayList<CarA> carAS;
 
     public CarRepository() {
