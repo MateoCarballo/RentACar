@@ -1,6 +1,5 @@
 package org.example.model.rental;
 
-import org.example.model.Car.Car;
 import org.example.model.Car.CarA;
 import org.example.model.Client;
 

@@ -1,6 +1,5 @@
 package org.example.repository;
 
-import org.example.model.Car.Car;
 import org.example.model.Client;
 import org.example.model.RentalOffice;
 

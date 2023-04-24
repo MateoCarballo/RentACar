@@ -1,7 +1,7 @@
 package org.example.controller;
 
 
-import org.example.model.Car.CarA;
+import org.example.model.Car.Car;
 import org.example.model.Car.Modelos;
 import org.example.service.car.CarServiceImp;
 import org.example.service.car.ICarService;
@@ -22,21 +22,21 @@ public class CarController {
      * poder crear un coche sin idCoche solo con su matrícula.
      */
     public void add (String licensePlate){
-        CarA carA = new CarA(licensePlate);
+        Car carA = new Car(licensePlate);
     }
 
     public void deleteByIdCar(Long idCar){
         serviceCar.deleteById(idCar);
     }
 
-    public ArrayList<CarA> findAll(){
+    public ArrayList<Car> findAll(){
         return serviceCar.findAll();
     }
-    public CarA findByIdCar(Long idCar){
+    public Car findByIdCar(Long idCar){
         return serviceCar.findById(idCar);
     }
     public void updateCar (Long idCar,String licensePlate){
-        CarA carA = new CarA(licensePlate,idCar, Modelos.MODELO_A);
-        serviceCar.update(carA);
+        Car car = new Car(licensePlate,idCar, Modelos.MODELO_A);
+        serviceCar.update(car);
     }
 }

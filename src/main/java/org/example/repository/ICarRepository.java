@@ -1,16 +1,16 @@
 package org.example.repository;
 
-import org.example.model.Car.CarA;
+import org.example.model.Car.Car;
 
 import java.util.ArrayList;
 
 public interface ICarRepository {
 
-    void addCar(CarA carA);
+    void addCar(Car carA);
     void deleteByIdCar(Long idCar);
     ArrayList findAll();
-    CarA findByIdCar(Long idCar);
-    void update(CarA carA);
+    Car findByIdCar(Long idCar);
+    void update(Car carA);
 
 
 }

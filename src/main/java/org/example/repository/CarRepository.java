@@ -1,42 +1,43 @@
 package org.example.repository;
 
+import org.example.model.Car.Car;
 import org.example.model.Car.CarA;
 
 import java.util.ArrayList;
 
 public class CarRepository implements ICarRepository{
     //TODO el Repositor usa ArrayList como una BD
-    private ArrayList<CarA> carAS;
+    private ArrayList<Car> carAS;
 
     public CarRepository() {
         carAS = new ArrayList<>();
     }
 
     @Override
-    public void addCar(CarA carA) {
-        carA.setIdCar(nextIdAvailable());
-        carAS.add(carA);
+    public void addCar(Car car) {
+        car.setIdCar(nextIdAvailable());
+        carAS.add(car);
     }
 
     @Override
-    public void update(CarA carA) {
-        CarA carAToUpdate = findByIdCar(carA.getIdCar());
-        if(carAToUpdate != null){
-            carAToUpdate.setIdCar(carA.getIdCar());
-            carAToUpdate.setLicensePlate(carA.getLicensePlate());
+    public void update(Car car) {
+        Car carToUpdate = findByIdCar(car.getIdCar());
+        if(carToUpdate != null){
+            carToUpdate.setIdCar(car.getIdCar());
+            carToUpdate.setLicensePlate(car.getLicensePlate());
         }
     }
     @Override
-    public ArrayList<CarA> findAll() {
+    public ArrayList<Car> findAll() {
         return carAS;
     }
 
     @Override
-    public CarA findByIdCar(Long idCar) {
+    public Car findByIdCar(Long idCar) {
         if(!isEmpty()){
-            for (CarA carA : carAS) {
-                if(carA.getIdCar() == idCar){
-                    return carA;
+            for (Car car : carAS) {
+                if(car.getIdCar() == idCar){
+                    return car;
                 }
             }
             return null;

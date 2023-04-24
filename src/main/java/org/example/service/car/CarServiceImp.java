@@ -1,6 +1,6 @@
 package org.example.service.car;
 
-import org.example.model.Car.CarA;
+import org.example.model.Car.Car;
 import org.example.repository.CarRepository;
 import org.example.repository.ICarRepository;
 
@@ -15,8 +15,8 @@ public class CarServiceImp implements ICarService {
     }
 
     @Override
-    public void add(CarA carA) {
-        repositoryCar.addCar(carA);
+    public void add(Car car) {
+        repositoryCar.addCar(car);
     }
 
     @Override
@@ -29,12 +29,12 @@ public class CarServiceImp implements ICarService {
     }
 
     @Override
-    public CarA findById(Long idCar) {
+    public Car findById(Long idCar) {
         return repositoryCar.findByIdCar(idCar);
     }
 
     @Override
-    public void update(CarA carA) {
+    public void update(Car car) {
 
     }
 
