@@ -12,10 +12,11 @@ public class FaceToFaceRental extends Rental {
 
     private RentalOffice rentalOffice;
 
-    public FaceToFaceRental(int idRent, Date startDate, Date endDate, Client client, Car car, String comments, RentalOffice rentalOffice) {
+    public FaceToFaceRental(int idRent, Date startDate, Date endDate,
+                            Client client, Car car, String comments, RentalOffice rentalOffice) {
         super(idRent, startDate, endDate, client, car);
         this.comments = comments;
-        this.rentalOffice=rentalOffice;
+        this.rentalOffice = rentalOffice;
     }
 
     public String getComments() {

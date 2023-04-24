@@ -22,7 +22,7 @@ public class CarController {
      * poder crear un coche sin idCoche solo con su matrícula.
      */
     public void add (String licensePlate){
-        Car carA = new Car(licensePlate);
+        Car car = new Car(licensePlate);
     }
 
     public void deleteByIdCar(Long idCar){

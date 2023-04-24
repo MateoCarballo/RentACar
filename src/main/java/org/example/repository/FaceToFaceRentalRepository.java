@@ -6,7 +6,7 @@ import org.example.model.RentalOffice;
 
 import java.util.Date;
 
-public class WebRentalRepository implements IRentalRepository {
+public class FaceToFaceRentalRepository implements IRentalRepository{
     @Override
     public void createRent(Client client, Car car, RentalOffice rentalOffice, Date startDate, Date endDate) {
 

@@ -1,5 +1,7 @@
 package org.example.model;
 
+import org.example.model.Car.Car;
+
 import java.util.ArrayList;
 
 public class RentalOffice {
