@@ -24,3 +24,6 @@ Además partimos de un desarrollo inicial que cubre todas las funcionalidades CR
 
 !<TODO Pendientes las clases e intrefaces de cada una de las cajas en repository>
 
+
+![](src/Img/img.png)
+
