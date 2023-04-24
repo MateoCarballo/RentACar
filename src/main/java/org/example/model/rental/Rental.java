@@ -1,6 +1,6 @@
 package org.example.model.rental;
 
-import org.example.model.Car.CarA;
+import org.example.model.Car.Car;
 import org.example.model.Client;
 
 import java.util.Date;
@@ -13,9 +13,9 @@ public abstract class Rental {
 
     private Client client;
 
-    private CarA carA;
+    private Car carA;
 
-    public Rental(int idRent, Date startDate, Date endDate, Client client, CarA carA) {
+    public Rental(int idRent, Date startDate, Date endDate, Client client, Car car) {
         this.idRent = idRent;
         this.startDate = startDate;
         this.endDate = endDate;
