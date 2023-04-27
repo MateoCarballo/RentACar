@@ -24,8 +24,7 @@ public class WebRentalServiceImp implements IRentalService{
         repository.createRent(client,car,rentalOffice,startDate,endDate);
     }
 
-    @Override
     public void modifyRent(int idRental, RentalOffice rentalOffice) {
-        repository.modifyRent(idRental, rentalOffice);
+        repository.modifyRent(idRental);
     }
 }

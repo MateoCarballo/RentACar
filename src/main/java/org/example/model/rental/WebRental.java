@@ -12,9 +12,24 @@ public class WebRental extends Rental {
     private RentalOffice deliveryOffice;
 
     public WebRental(int idRent, Date startDate, Date endDate,
-                     Client client, Car car, int deliveryTime, RentalOffice deliveryOffice) {
+                     Client client, Car car, RentalOffice deliveryOffice) {
         super(idRent, startDate, endDate, client, car);
+        this.deliveryOffice = deliveryOffice;
+    }
+
+    public int getDeliveryTime() {
+        return deliveryTime;
+    }
+
+    public void setDeliveryTime(int deliveryTime) {
         this.deliveryTime = deliveryTime;
+    }
+
+    public RentalOffice getDeliveryOffice() {
+        return deliveryOffice;
+    }
+
+    public void setDeliveryOffice(RentalOffice deliveryOffice) {
         this.deliveryOffice = deliveryOffice;
     }
 }

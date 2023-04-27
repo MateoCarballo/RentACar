@@ -32,6 +32,15 @@ public abstract class Rental {
     // clientes ya existen antes de crear
     // El alquiler.
 
+
+    public int getIdRent() {
+        return idRent;
+    }
+
+    public void setIdRent(int idRent) {
+        this.idRent = idRent;
+    }
+
     public Date getStartDate() {
         return startDate;
     }
@@ -46,5 +55,29 @@ public abstract class Rental {
 
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
+    }
+
+    public RentalOffice getRentalOffice() {
+        return rentalOffice;
+    }
+
+    public void setRentalOffice(RentalOffice rentalOffice) {
+        this.rentalOffice = rentalOffice;
     }
 }
