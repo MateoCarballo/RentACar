@@ -159,10 +159,10 @@ public class Dialog {
     private void rentManager() {
         do {
              System.out.println("\n************************** Client Manager ********************************");
-            System.out.println("\n\t1. Create Rent Face 2 Face.\t\t\t\t5. Search Rent.");
-            System.out.println("\n\t2. Create Rent Web.\t\t\t\t6. See All Rent.");
-            System.out.println("\n\t3. Remove Rent.\t\t\t\t0. Back.");
-            System.out.println("\n\t4. Update Rent.\t\t\t\t");
+            System.out.println("\n\t1. Create Rent Face 2 Face.\t\t\t\t5. Search WebRent.");
+            System.out.println("\n\t2. Create Rent Web.\t\t\t\t6. Search F2FRent.");
+            System.out.println("\n\t3. Remove Rent.\t\t\t\t6. See All Rent.");
+            System.out.println("\n\t4. Update Rent.\t\t\t\t0. Back.");
             System.out.println("\n**************************************************************************");
             int choice = scanner.nextInt();
             try {
@@ -178,27 +178,26 @@ public class Dialog {
                     String fRecogida= scanner.nextLine();
                     System.out.println("Fecha de recogida dd/MM/yy: ");
                     String fEntrega= scanner.nextLine();
+                    f2fRentController.createRent(clientController.findByDni(dni),carController.findByIdCar(idcar),myRentalOffice,convertirStringDate(fRecogida),convertirStringDate(fEntrega));
+                } else if (choice == 2) {
+                    scanner.nextLine();
+                    System.out.println("Id Car: ");
+                    long idcar = scanner.nextInt();
+                    carController.findByIdCar(idcar);
+                    System.out.println("DNI: ");
+                    String dni = scanner.nextLine();
+                    System.out.println("Fecha de recogida dd/MM/yy: ");
+                    String fRecogida= scanner.nextLine();
                     System.out.println("Fecha de recogida dd/MM/yy: ");
                     String fEntrega= scanner.nextLine();
-                    f2fRentController.createRent(carController.findByIdCar(idcar),clientController.findByDni(dni),,convertirStringDate(fRecogida),convertirStringDate(fEntrega));
-                    clientController.findByDni(dni);
-                } else if (choice == 2) {
-                    System.out.println("Car ID: ");
-                    int id = scanner.nextInt();
-                    carController.deleteByIdCar((long) id);
+                    webRentController.createRent(clientController.findByDni(dni),carController.findByIdCar(idcar),myRentalOffice,convertirStringDate(fRecogida),convertirStringDate(fEntrega));
+
                 } else if (choice == 3) {
-                    System.out.println(carController.findAll());
-                    System.out.println("Car ID: ");
-                    int id = scanner.nextInt();
-                    System.out.println("License Plate: ");
-                    String licensePlate = String.valueOf(scanner.nextInt());
-                    scanner.nextLine();
-                    carController.updateCar((long) id,licensePlate);
+                    System.out.println("Id Rent: ");
+                    int idRent = scanner.nextInt();
+                    webRentController.modifyRent(idRent);
                 } else if (choice == 4) {
-                    scanner.nextLine();
-                    System.out.println("Car ID: ");
-                    long idCar = scanner.nextLong();
-                    System.out.println(carController.findByIdCar(idCar));
+
                 } else if (choice == 5) System.out.println(carController.findAll());
                 else if (choice == 0) getStarted();
                 else System.err.println("[ERROR] Your option is incorrect!! Try again!!");

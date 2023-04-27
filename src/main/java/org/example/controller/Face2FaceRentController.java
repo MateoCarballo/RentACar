@@ -17,9 +17,14 @@ public class Face2FaceRentController {
     public void createRent(Client client, Car car, RentalOffice rOffice, Date starDate, Date endDate){
 
     }
-    public void modifyRent(int idRental, RentalOffice rentalOffice) {
+    public void modifyRent(int idRental) {
 
     }
+
+    public void searcchRent(int idF2FRent){
+
+    }
+
 
 
 }
