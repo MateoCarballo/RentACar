@@ -193,13 +193,20 @@ public class Dialog {
                     webRentController.createRent(clientController.findByDni(dni),carController.findByIdCar(idcar),myRentalOffice,convertirStringDate(fRecogida),convertirStringDate(fEntrega));
 
                 } else if (choice == 3) {
+
+                } else if (choice == 4) {
                     System.out.println("Id Rent: ");
                     int idRent = scanner.nextInt();
                     webRentController.modifyRent(idRent);
-                } else if (choice == 4) {
-
-                } else if (choice == 5) System.out.println(carController.findAll());
-                else if (choice == 0) getStarted();
+                } else if (choice == 5){
+                    System.out.println("Id Rent: ");
+                    int idRent = scanner.nextInt();
+                    webRentController.searchRent(idRent);
+                } else if (choice == 6) {
+                    System.out.println("Id Rent: ");
+                    int idRent = scanner.nextInt();
+                    f2fRentController.searcchRent(idRent);
+                }else if (choice == 0) getStarted();
                 else System.err.println("[ERROR] Your option is incorrect!! Try again!!");
             } catch (InputMismatchException e) {
                 System.err.println("[ERROR] You must type a number!!!");
