@@ -13,9 +13,10 @@ public abstract class Rental {
 
     private Client client;
 
-    //TODO creo que con que pase el rentOffice hay podria buscar el coche que alquilo y saber si está o no alquilado
+    //TODO creo que con que pase el rentOffice hay podría buscar el coche que alquilo y saber si está o no alquilado
 
     private Car car;
+
     private RentalOffice rentalOffice;
 
     public Rental(int idRent, Date startDate, Date endDate, Client client, Car car) {
@@ -26,8 +27,8 @@ public abstract class Rental {
         this.car = car;
     }
 
-    //TODO mi idea aqui es crearlo vacio y "copiar" un cliente y coche que ya existen
-    // Tengo dudas con si hacer el new aqui o no, entiendo que no porque los coches y
+    //TODO mi idea aquí es crearlo vacío y "copiar" un cliente y coche que ya existen
+    // Tengo dudas con si hacer el new aquí o no, entiendo que no porque los coches y
     // clientes ya existen antes de crear
     // El alquiler.
 

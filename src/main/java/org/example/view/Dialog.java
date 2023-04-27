@@ -6,15 +6,14 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Dialog {
-
     private ClientController clientController;
     private Scanner scanner;
+
     public Dialog() {
         clientController = new ClientController();
     }
 
-
-    public void getStarted(){
+    public void getStarted() {
         do {
             System.out.println("\n********************** Welcome to Rent A Car *****************************");
             System.out.println("\n\t1. Manage Clients.\t\t\t\t\t4. Manage Models.");
@@ -22,28 +21,15 @@ public class Dialog {
             System.out.println("\n\t3. Manage Offices.\t\t\t\t\t0. Exit.");
             System.out.println("\n**************************************************************************");
             scanner = new Scanner(System.in);
-
             try {
                 int choice = scanner.nextInt();
-                if (choice == 1) {
-                    clientManager();
-                } else if (choice == 2) {
-                    //TODO
-                } else if (choice == 3) {
-                    //TODO
-                } else if (choice == 4) {
-                    //TODO
-                } else if (choice == 5) {
-                    //TODO
-                }else if(choice==0) {
+                if (choice == 1) clientManager();
+                else if (choice == 2) { /*TODO*/} else if (choice == 3) { /*TODO*/} else if (choice == 4) { /*TODO*/} else if (choice == 5) { /*TODO*/} else if (choice == 0) {
                     System.out.println("Bye!!");
-                    System.exit(0);;
-                } else {
-                    System.err.println("[ERROR] Your option is incorrect!! Try again!!");
-                }
-
-            } catch (
-            InputMismatchException e) {
+                    System.exit(0);
+                    ;
+                } else System.err.println("[ERROR] Your option is incorrect!! Try again!!");
+            } catch (InputMismatchException e) {
                 System.err.println("[ERROR] You must type a number!!!");
                 scanner.next();
             } catch (Exception e) {
@@ -52,7 +38,7 @@ public class Dialog {
         } while (true);
     }
 
-    public void clientManager(){
+    public void clientManager() {
         do {
             System.out.println("\n************************** Client Manager ********************************");
             System.out.println("\n\t1. Create Client.\t\t\t\t4. Search Client.");
@@ -61,7 +47,7 @@ public class Dialog {
             System.out.println("\n**************************************************************************");
             int choice = scanner.nextInt();
             try {
-                if(choice == 1){
+                if (choice == 1) {
                     scanner.nextLine();
                     System.out.println("Dni: ");
                     String dni = scanner.nextLine();
@@ -91,14 +77,9 @@ public class Dialog {
                     System.out.println("Dni: ");
                     String dni = scanner.nextLine();
                     System.out.println(clientController.findByDni(dni));
-                } else if (choice == 5) {
-                    System.out.println(clientController.findAll());
-                } else if(choice==0) {
-                    getStarted();
-            } else {
-                System.err.println("[ERROR] Your option is incorrect!! Try again!!");
-            }
-
+                } else if (choice == 5) System.out.println(clientController.findAll());
+                else if (choice == 0) getStarted();
+                else System.err.println("[ERROR] Your option is incorrect!! Try again!!");
             } catch (InputMismatchException e) {
                 System.err.println("[ERROR] You must type a number!!!");
                 scanner.next();
@@ -107,5 +88,4 @@ public class Dialog {
             }
         } while (true);
     }
-
 }
