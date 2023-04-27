@@ -4,6 +4,8 @@ import org.example.controller.CarController;
 import org.example.controller.ClientController;
 import org.example.controller.Face2FaceRentController;
 import org.example.controller.WebRentController;
+import org.example.model.RentalOffice;
+import org.example.model.rental.Rental;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -20,6 +22,10 @@ public class Dialog {
 
     private WebRentController webRentController;
     private Scanner scanner;
+
+    //Para facilitar las gestiones suponemos que es para una unica oficina por eso hago esto
+    public RentalOffice myRentalOffice= new RentalOffice("Avenida de Galicia, 101, 36216 Vigo, Pontevedra",100);
+
 
     public Dialog() {
         clientController = new ClientController();
@@ -152,7 +158,7 @@ public class Dialog {
     }
     private void rentManager() {
         do {
-            System.out.println("\n************************** Client Manager ********************************");
+             System.out.println("\n************************** Client Manager ********************************");
             System.out.println("\n\t1. Create Rent Face 2 Face.\t\t\t\t5. Search Rent.");
             System.out.println("\n\t2. Create Rent Web.\t\t\t\t6. See All Rent.");
             System.out.println("\n\t3. Remove Rent.\t\t\t\t0. Back.");
@@ -170,6 +176,8 @@ public class Dialog {
                     String dni = scanner.nextLine();
                     System.out.println("Fecha de recogida dd/MM/yy: ");
                     String fRecogida= scanner.nextLine();
+                    System.out.println("Fecha de recogida dd/MM/yy: ");
+                    String fEntrega= scanner.nextLine();
                     System.out.println("Fecha de recogida dd/MM/yy: ");
                     String fEntrega= scanner.nextLine();
                     f2fRentController.createRent(carController.findByIdCar(idcar),clientController.findByDni(dni),,convertirStringDate(fRecogida),convertirStringDate(fEntrega));
