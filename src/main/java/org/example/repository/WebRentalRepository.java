@@ -11,19 +11,20 @@ import java.util.Date;
 
 public class WebRentalRepository implements IRentalRepository {
 
-    private ArrayList<WebRental> Rentals;
+    private ArrayList<WebRental> wRentals;
 
     public WebRentalRepository(){
-        Rentals=new ArrayList<>();
+        wRentals =new ArrayList<>();
     }
+
     @Override
-    public void createRent(Client client, Car car, RentalOffice rentalOffice, Date startDate, Date endDate) {
-        Rentals.add(new WebRental(nextIdAvailable(),startDate,endDate,client,car,rentalOffice));
+    public void createRent(Date startDate, Date endDate, Client client, Car car, RentalOffice rentalOffice) {
+        wRentals.add(new WebRental(nextIdAvailable(),startDate,endDate,client,car,rentalOffice));
     }
 
     @Override
     public void modifyRent(int idRental) {
-        for (WebRental wr : Rentals) {
+        for (WebRental wr : wRentals) {
             if(wr.getIdRent()==idRental){
                 /*
                 Codigo que quisieramos ejecutar amplicar una fecha de entrega
@@ -36,9 +37,9 @@ public class WebRentalRepository implements IRentalRepository {
     @Override
     public Rental searchRent(int idRent) {
         if (!isEmpty()) {
-            for (int i = 0; i < Rentals.size(); i++) {
-                if(Rentals.get(i).getIdRent()==idRent){
-                    return Rentals.get(i);
+            for (WebRental rental : wRentals) {
+                if (rental.getIdRent() == idRent) {
+                    return rental;
                 }
                 return null;
             }
@@ -47,12 +48,13 @@ public class WebRentalRepository implements IRentalRepository {
     }
     public int nextIdAvailable() {
         if (!isEmpty())
-            return Rentals.get(Rentals.size() - 1).getIdRent() + 1;
+            return wRentals.get(wRentals.size() - 1).getIdRent() + 1;
         else return 1;
     }
     public boolean isEmpty() {
-        if (Rentals.size() == 0)
+        if (wRentals.size() == 0) {
             return true;
+        }
         return false;
     }
 }

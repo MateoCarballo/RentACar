@@ -9,7 +9,9 @@ import org.example.model.rental.WebRental;
 import java.util.Date;
 
 public interface IRentalRepository {
-    void createRent(Client client, Car car, RentalOffice rentalOffice, Date startDate, Date endDate);
+
+    void createRent(Date startDate, Date endDate, Client client, Car car, RentalOffice rentalOffice);
+
     void modifyRent(int idRental);
     Rental searchRent(int idRent);
 
